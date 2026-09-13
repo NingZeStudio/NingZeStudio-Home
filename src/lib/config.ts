@@ -31,10 +31,9 @@ export const siteConfig: SiteConfig = {
   title: '柠泽工作室 (NingZe Studio) - 专注中文 Minecraft 生态建设',
   description: '专注中文 Minecraft 生态建设。致力于打造 LogShare、柠泽资源站、SpinYarn 等更懂中文语境的现代化开源基础设施与社区工具矩阵。',
   url: 'https://github.com/NingZeStudio',
-  beian: '萌ICP备20260001号',
   github: 'https://github.com/NingZeStudio',
   email: '3436464181@qq.com',
-  qqGroup: 'https://qun.qq.com/universal-share/share?ac=1&authKey=4tb0yflRdC0FjWZGhKHxfTxijnNc0crs399pxm782Lipx%2BoV6xmV%2BoA8%2BcQBUn7m&busi_data=eyJncm91cENvZGUiOiIxMTA0NjkwODM3IiwidG9rZW4iOiIrU2owaDFCMDRmVjJKaUdmdXA5M1RZNHlpVXZaYkZRTUh1bVA4V0ZVNlpGcUpuRjBrbHFRei9CeHI3NXZFb2xBIiwidWluIjoiMzQzNjQ2NDE4MSJ9&data=wr1XZ8qxXdkFazXoz2cuv1qBridVSJ8kVaDYI3vpZxTBbZNezhedFRTuCSeM_-GlzZRIeUHhE36zD5VXan3JqA&svctype=4&tempid=h5_group_info',
+  qqGroup: 'https://qm.qq.com/q/MsDLWJTRo6',
   navLinks: [
     { name: '首页', path: '/' },
     { name: '项目矩阵', path: '/projects' },

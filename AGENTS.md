@@ -3,21 +3,19 @@
 ## 项目定位与架构职责
 
 - 本项目是 **柠泽工作室 (NingZe Studio)** 官方网站，基于 `LogShare-Front-Template` 前台设计范式深度开发。
-- 技术栈：**Vue 3.5 + TypeScript + Vite + Tailwind CSS + Phosphor Icons**。
+- 技术栈：**Vue 3.5 + TypeScript + Vite + Tailwind CSS + Phosphor Icons**（服务端与系统级核心语言为 **PHP** 与 **Go**）。
 - 部署与产物：纯静态 SPA，产物位于 `dist/`，可部署于任何 CDN、Nginx 或对象存储上。
 - 数据模型位于 `src/data/`：
   - `projects.ts`：收录工作室 11+ 代表性开源生态项目（LogShare、miawa、SpinYarn、OpenLiteWaf、OpenLiteStats 等），含 Stars、技术栈、链接与描述；
-  - `community.ts`：官方社区矩阵，遵循严格排序约定；
+  - `community.ts`：官方社区矩阵，遵循严格排序约定（各频道置顶第一，四大官方群排第二）；
   - `team.ts`：工作室理念、大事记、核心成员分工与致谢。
 - 基础配置与 SEO 位于 `src/lib/`（`config.ts`, `useSeoMeta.ts`, `toast.ts`）。
 
-## 社区群列表排序规范（铁律）
+## 社区群列表规范（铁律）
 
-根据工作室最高规范，在社区页面（`/community`）及相关列表展示中，必须严格遵循以下显示顺序：
-1. **各频道排第一**（置顶展示，操作按钮文案固定为“进入频道”）；
-2. **官方群与答疑群排第二**（综合服务枢纽）；
-3. **启动器群排第三**（面向特定启动器用户的技术互助群）；
-4. **综合玩家社区排第四**（玩家自由交流与组队）。
+根据工作室最高规范，在社区页面（`/community`）及相关列表展示中，必须严格遵循以下约定：
+1. **各官方频道排第一**（置顶展示，操作按钮文案固定为“进入频道”）；
+2. **官方交流与答疑群排第二**（仅收录四大官方群：NingZe 资源站官方群、LogShare 官方交流群、LogShare 答疑解惑群、柠泽工作室下游开发者群）。严禁收录非认证外部群聊。
 
 ## 验证与构建命令
 

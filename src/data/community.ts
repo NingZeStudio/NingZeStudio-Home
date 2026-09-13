@@ -40,75 +40,40 @@ export const channelGroups: QqGroup[] = [
   }
 ]
 
+// 官方群聊共四个：NingZe资源站官方群、LogShare 官方交流群、LogShare 答疑解惑群、柠泽工作室下游开发者群
 export const officialGroups: QqGroup[] = [
   {
-    name: '柠泽工作室官方交流群',
-    description: '群号：1077373741 · 工作室最新动态与全线服务交流',
+    name: 'NingZe 资源站官方群',
+    description: 'NingZe 资源站镜像分发、API 服务与使用交流',
     url: 'https://qun.qq.com/universal-share/share?ac=1&authKey=4tb0yflRdC0FjWZGhKHxfTxijnNc0crs399pxm782Lipx%2BoV6xmV%2BoA8%2BcQBUn7m&busi_data=eyJncm91cENvZGUiOiIxMTA0NjkwODM3IiwidG9rZW4iOiIrU2owaDFCMDRmVjJKaUdmdXA5M1RZNHlpVXZaYkZRTUh1bVA4V0ZVNlpGcUpuRjBrbHFRei9CeHI3NXZFb2xBIiwidWluIjoiMzQzNjQ2NDE4MSJ9&data=wr1XZ8qxXdkFazXoz2cuv1qBridVSJ8kVaDYI3vpZxTBbZNezhedFRTuCSeM_-GlzZRIeUHhE36zD5VXan3JqA&svctype=4&tempid=h5_group_info'
   },
   {
+    name: 'LogShare 官方交流群',
+    description: 'LogShare 平台迭代公告、新功能体验与技术探讨',
+    url: 'https://qm.qq.com/q/FOGt99aayY'
+  },
+  {
     name: 'LogShare 答疑解惑群',
-    description: '日志排查、报错解析、提问技巧与技术答疑交流',
+    description: '崩溃报错解析、日志脱敏诊断与社区互助答疑',
     url: 'https://qm.qq.com/q/gZ2El58RVe'
   },
   {
-    name: 'LogShare 官方交流群',
-    description: '版本迭代更新发布、问题反馈与技术探讨',
-    url: 'https://qm.qq.com/q/FOGt99aayY'
-  }
-]
-
-export const launcherGroups: QqGroup[] = [
-  {
-    name: 'Axolotl Launcher 官方交流①群',
-    description: 'Axolotl Launcher 官方交流群',
-    url: 'https://qm.qq.com/q/W26huQFZym'
-  },
-  {
-    name: 'Axolotl Launcher 官方交流②群',
-    description: 'Axolotl Launcher 官方交流群',
-    url: 'https://qm.qq.com/q/EZX7wHdNgk'
-  },
-  {
-    name: 'Fold Craft Launcher 玩家交流群①',
-    description: 'Fold Craft Launcher 官方交流群',
-    url: 'https://qm.qq.com/q/PK6I2gIB0c'
-  },
-  {
-    name: 'fcl、zl2 启动器交流群',
-    description: 'FCL 与 Zalith Launcher 玩家交流讨论',
-    url: 'https://qm.qq.com/q/4bov8ZSweI'
-  }
-]
-
-export const communityGroups: QqGroup[] = [
-  {
-    name: '公益玩家社服务器综合交流群',
-    description: 'Minecraft 玩家社群与联机服务器交流',
-    url: 'https://qm.qq.com/q/9jzheyfi36'
+    name: '柠泽工作室下游开发者群',
+    description: '基于柠泽开源基建二次开发、集成对接与技术交流',
+    url: 'https://qm.qq.com/q/MsDLWJTRo6'
   }
 ]
 
 export const communitySections: CommunitySection[] = [
   {
     title: '各官方频道',
-    description: '无需验证即刻加入，订阅最新启动器构建、功能公告与社区话题',
+    description: '无需验证即刻加入，订阅最新构建、功能公告与社区话题',
     isChannel: true,
     groups: channelGroups
   },
   {
-    title: '官方群与答疑群',
-    description: '与开发者及核心团队面对面交流，获得快速技术答疑支持',
+    title: '官方交流与答疑群',
+    description: '与开发者及核心团队面对面交流，获得官方技术支持与互助答疑',
     groups: officialGroups
-  },
-  {
-    title: '各启动器交流群',
-    description: '主流启动器玩家社群，探讨配置调优、模组兼容与启动疑难',
-    groups: launcherGroups
-  },
-  {
-    title: '玩家综合社区',
-    description: '跨平台联机互助与 Minecraft 游戏文化爱好者聚集地',
-    groups: communityGroups
   }
 ]

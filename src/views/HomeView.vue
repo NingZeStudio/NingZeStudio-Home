@@ -33,7 +33,7 @@ const pillars = [
   {
     icon: Cpu,
     title: '高性能原生工具',
-    desc: '基于 Rust 与 Python 打造的 SpinYarn 混淆还原、按键转换与终端监控，榨干每一分性能。'
+    desc: '以 PHP 高并发常驻协程与 Go 编译型服务为核心支柱，打造高可用 API、终端面板与自动化中间件。'
   },
   {
     icon: PaintBrush,
@@ -51,7 +51,7 @@ const stats = [
   { label: '活跃开源仓库', value: '17+' },
   { label: 'GitHub 社区标星', value: '110+' },
   { label: '月均服务请求', value: '100K+' },
-  { label: '全栈核心语言', value: 'Rust · Go · Vue' }
+  { label: '核心开发语言', value: 'PHP · Go' }
 ]
 </script>
 

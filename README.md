@@ -8,6 +8,7 @@
     <a href="https://github.com/NingZeStudio"><img src="https://img.shields.io/badge/GitHub-NingZeStudio-181717?logo=github&style=flat-square" alt="GitHub" /></a>
     <a href="https://logshare.cn"><img src="https://img.shields.io/badge/Flagship-LogShare.CN-zinc?style=flat-square" alt="LogShare" /></a>
     <a href="https://miawa.cn"><img src="https://img.shields.io/badge/Flagship-柠泽资源站-zinc?style=flat-square" alt="柠泽资源站" /></a>
+    <img src="https://img.shields.io/badge/Language-PHP%20%7C%20Go-blue?style=flat-square" alt="Core Languages: PHP & Go" />
     <img src="https://img.shields.io/badge/Vue-3.5-42b883?logo=vuedotjs&style=flat-square" alt="Vue 3.5" />
     <img src="https://img.shields.io/badge/TailwindCSS-3.4-38bdf8?logo=tailwindcss&style=flat-square" alt="Tailwind CSS" />
     <img src="https://img.shields.io/badge/TypeScript-5.6-3178c6?logo=typescript&style=flat-square" alt="TypeScript" />
@@ -20,13 +21,14 @@
 
 本项目是 **柠泽工作室 (NingZe Studio)** 的官方网站，基于 `LogShare-Front-Template` 前端设计范式打造：
 
+- ⚙️ **核心技术支柱**：服务端与系统级基建以 **PHP**（Swoole 协程常驻服务）与 **Go**（编译型系统服务与 TUI 工具）为核心开发语言。
 - 🎨 **低饱和度冷灰阶美学**：基于 Zinc / Slate 深度语义化设计，无高饱和渐变色，深浅色主题平滑过渡。
 - ⚡ **微阻尼物理回弹**：交互微动效注入 `ease-bounce-soft`（`cubic-bezier(0.34, 1.7, 0.64, 1)`），手感温润自然。
 - 🪄 **形变吸顶顶栏 (Header)**：随页面滚动自适应形变为毛玻璃悬浮胶囊，兼顾沉浸感与紧凑性。
 - 🔤 **自托管零阻塞字体**：内置 HarmonyOS Sans SC 常用字集与 SauceCode Mono，告别第三方字体网络加载抖动。
 - 🛡️ **横向防溢出与细滚动条**：多层级弹性容器防御长文本撑裂布局，全局统一 6px 细滚动条。
 - 📱 **多端社交分享元标签矩阵**：全站支持 Open Graph、Twitter Card 以及专属的 **QQ 分享元标签 (`qq:share:*`)**。
-- 👥 **规范化社区展示**：严格遵循工作室约定——**频道排第一（置顶）**、**官方群与答疑群排第二**、**启动器群排第三**、**玩家社区排第四**。
+- 👥 **规范化社区展示**：严格遵循工作室约定——**各官方频道排第一（置顶）**、**官方交流群与答疑群排第二**（覆盖资源站、LogShare 与下游开发者）。
 
 ---
 

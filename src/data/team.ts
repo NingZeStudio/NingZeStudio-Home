@@ -42,7 +42,7 @@ export const studioMilestones: Milestone[] = [
   {
     year: '2026.08',
     title: 'LogShare.CN 架构大版本演进',
-    desc: '自研 SpinYarn Rust 反混淆引擎上线，引入 OpenLiteWaf 与 OpenLiteStats 边缘防护中间件。'
+    desc: '自研 SpinYarn 反混淆引擎与 PHP 拓展上线，引入 OpenLiteWaf 与 OpenLiteStats 边缘防护中间件。'
   },
   {
     year: '2026.09',
