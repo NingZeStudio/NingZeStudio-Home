@@ -375,10 +375,29 @@ const techHighlights = [
           hoverable
           class="p-5 flex flex-col justify-between space-y-4"
         >
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <h3 class="text-base font-bold text-foreground">{{ launcher.name }}</h3>
-              <div class="flex gap-1">
+          <div class="space-y-3">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <img
+                  v-if="launcher.logo"
+                  :src="launcher.logo"
+                  :alt="launcher.name"
+                  class="h-10 w-10 rounded-xl object-contain border border-border/80 shadow-soft bg-background shrink-0 p-0.5"
+                  loading="lazy"
+                />
+                <div
+                  v-else
+                  class="h-10 w-10 rounded-xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center font-bold shrink-0 text-sm font-mono"
+                >
+                  {{ launcher.shortName.charAt(0) }}
+                </div>
+                <div class="min-w-0">
+                  <h3 class="text-base font-bold text-foreground truncate">{{ launcher.name }}</h3>
+                  <p class="text-xs text-muted-foreground font-mono truncate">{{ launcher.shortName }}</p>
+                </div>
+              </div>
+
+              <div class="flex flex-wrap gap-1 justify-end shrink-0">
                 <Badge
                   v-for="plat in launcher.platforms"
                   :key="plat"
@@ -389,6 +408,7 @@ const techHighlights = [
                 </Badge>
               </div>
             </div>
+
             <p class="text-xs text-muted-foreground leading-relaxed">
               {{ launcher.description }}
             </p>
