@@ -71,5 +71,18 @@ export const launchers: LauncherItem[] = [
     platforms: ['鸿蒙'],
     integrationFeature: '集成 LogShare 崩溃报告生成与在线分析',
     logo: new URL('@/assets/img/launchers/amcl.png', import.meta.url).href
+  },
+  {
+    id: 'pojav-glow-worm',
+    name: 'Pojav Glow·Worm',
+    shortName: 'PGW',
+    tagline: '高性能魔改版 Android Minecraft 启动器',
+    description: '基于 PojavLauncher 深度定制优化的 Android 启动器，引入更多渲染后端与性能设置，深度支持 LogShare 日志一键上传与排错。',
+    website: 'https://github.com/Vera-Firefly/Pojav-Glow-Worm',
+    github: 'https://github.com/Vera-Firefly/Pojav-Glow-Worm',
+    platforms: ['Android'],
+    integrationFeature: '原生接入 LogShare 开放生态，崩溃日志一键上传脱敏排查',
+    logo: new URL('@/assets/img/launchers/pojav-glow-worm.png', import.meta.url).href
   }
 ]
+
