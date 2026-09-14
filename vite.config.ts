@@ -154,6 +154,7 @@ function customBuildReportPlugin(): Plugin {
 }
 
 export default defineConfig({
+  base: process.env.GITHUB_PAGES ? '/NingZeStudio-Home/' : '/',
   plugins: [vue(), customBuildReportPlugin()],
   define: {
     __DEPLOY_HASH__: JSON.stringify(DEPLOY_HASH)

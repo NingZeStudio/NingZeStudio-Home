@@ -6,23 +6,22 @@ import Card from '@/components/ui/Card.vue'
 import AppButton from '@/components/ui/AppButton.vue'
 import {
   PhChatCircleDots as ChatIcon,
-  PhBroadcast as Broadcast,
   PhArrowSquareOut as ExternalLink,
   PhInfo as Info
 } from '@phosphor-icons/vue'
 
 useSeoMeta({
   title: '社区交流',
-  description: '加入柠泽工作室官方交流群、各启动器官方频道与玩家社区，第一时间获取更新资讯与技术答疑。'
+  description: '加入柠泽工作室官方交流群、答疑互助群与下游开发者群，第一时间获取更新资讯与技术答疑。'
 }, siteConfig.name)()
 </script>
 
 <template>
   <div class="container mx-auto max-w-6xl px-4 sm:px-6 py-10 space-y-12">
     <div class="space-y-2 border-b border-border/60 pb-6">
-      <h1 class="text-3xl font-extrabold tracking-tight text-foreground">社区交流与官方频道</h1>
+      <h1 class="text-3xl font-extrabold tracking-tight text-foreground">官方社群与技术交流</h1>
       <p class="text-sm text-muted-foreground leading-relaxed">
-        涵盖各启动器官方交流频道、核心答疑群与玩家互助社区。点击即可加入群聊或进入频道。
+        涵盖资源站交流、LogShare 官方交流与答疑，以及下游开发者合作群。点击即可直接加入对应群聊。
       </p>
     </div>
 
@@ -33,11 +32,11 @@ useSeoMeta({
       </div>
       <div class="text-xs text-muted-foreground space-y-1 leading-relaxed">
         <p class="font-semibold text-foreground text-sm">友好互助交流指引</p>
-        <p>频道专供更新通知与单向资讯同步，入群交流请遵守群规。寻求日志诊断与崩溃排查时，建议优先使用 <a href="https://logshare.cn" target="_blank" class="text-foreground underline font-medium">LogShare.CN</a> 生成日志脱敏分享链接并提供完整错误堆栈。</p>
+        <p>入群交流请遵守群规，友善互助。寻求 Minecraft 日志诊断与报错排查时，建议优先使用 <a href="https://logshare.cn" target="_blank" class="text-foreground underline font-medium">LogShare.CN</a> 生成脱敏分析链接并提供完整堆栈信息。</p>
       </div>
     </div>
 
-    <!-- 分区列表（严格遵循：频道置顶第一，官方群第二） -->
+    <!-- 官方群聊列表 -->
     <div class="space-y-10">
       <section
         v-for="section in communitySections"
@@ -45,8 +44,7 @@ useSeoMeta({
         class="space-y-4"
       >
         <div class="flex items-center gap-2">
-          <component
-            :is="section.isChannel ? Broadcast : ChatIcon"
+          <ChatIcon
             weight="duotone"
             class="h-5 w-5 text-primary"
           />
@@ -76,7 +74,7 @@ useSeoMeta({
               rel="noopener noreferrer"
               class="shrink-0"
             >
-              <span>{{ section.isChannel ? '进入频道' : '加入群聊' }}</span>
+              <span>加入群聊</span>
               <ExternalLink weight="duotone" class="h-3 w-3" />
             </AppButton>
           </Card>

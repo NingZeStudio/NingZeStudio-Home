@@ -4,7 +4,7 @@ import { updateSeoMeta } from '@/lib/useSeoMeta'
 import { siteConfig } from '@/lib/config'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
