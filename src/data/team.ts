@@ -14,6 +14,7 @@ export interface TeamMember {
   name: string
   role: string
   title: string
+  avatar?: string
   description: string
   techStack: string[]
   email?: string
@@ -79,6 +80,7 @@ export const teamMembers: TeamMember[] = [
     name: '柠枺 (Lemwood)',
     role: '财务资助 · 生态开拓 · AI 研发',
     title: '生态主理人 & 算力赞助',
+    avatar: new URL('@/assets/img/avatar-lemwood.png', import.meta.url).href,
     description:
       '全线高防服务器集群与网络带宽全额资助者。统筹工作室财务运营、开发者人脉拓展与外部启动器生态联动，主导 Golang 服务研发与 LogShare 智能诊断模型。',
     techStack: ['财务', 'Golang', '生态', '人脉', 'AI'],
@@ -91,6 +93,7 @@ export const teamMembers: TeamMember[] = [
     name: '燕随 (YanSui)',
     role: '系统工程 · 全栈架构 · 界面规范',
     title: '核心系统架构师',
+    avatar: new URL('@/assets/img/avatar-yansui.png', import.meta.url).href,
     description:
       '主导全线系统的底层架构与工程落地。负责 PHP 协程常驻服务、Rust 堆栈反混淆引擎、Vue 3 界面设计范式及 Docker / Linux 容器化与网络 BGP 路由调优。',
     techStack: ['Docker', 'Linux', 'BGP', 'PHP', 'Vue', 'Rust'],

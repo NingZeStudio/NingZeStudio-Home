@@ -24,8 +24,7 @@ import {
   PhChatCircleDots as ChatIcon,
   PhUserPlus as UserPlus,
   PhCheckCircle as CheckCircle,
-  PhWarningCircle as WarningIcon,
-  PhHardDrives as Server
+  PhWarningCircle as WarningIcon
 } from '@phosphor-icons/vue'
 
 useSeoMeta(
@@ -213,13 +212,23 @@ const techHighlights = [
         >
           <div class="space-y-3">
             <div class="flex items-start justify-between gap-3">
-              <div class="flex items-center gap-3">
-                <div class="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20">
-                  <component :is="member.id === 'lemwood' ? Server : Code" weight="duotone" class="h-5 w-5" />
+              <div class="flex items-center gap-3.5">
+                <img
+                  v-if="member.avatar"
+                  :src="member.avatar"
+                  :alt="member.name"
+                  class="h-12 w-12 rounded-xl object-cover border border-border/80 shadow-soft bg-muted shrink-0"
+                  loading="lazy"
+                />
+                <div
+                  v-else
+                  class="h-12 w-12 rounded-xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center font-bold shrink-0"
+                >
+                  {{ member.name.charAt(0) }}
                 </div>
-                <div>
-                  <h3 class="text-base font-bold text-foreground">{{ member.name }}</h3>
-                  <p class="text-xs text-muted-foreground font-mono">{{ member.role }} · {{ member.title }}</p>
+                <div class="min-w-0">
+                  <h3 class="text-base font-bold text-foreground truncate">{{ member.name }}</h3>
+                  <p class="text-xs text-muted-foreground font-mono truncate">{{ member.role }} · {{ member.title }}</p>
                 </div>
               </div>
             </div>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useSeoMeta } from '@/lib/useSeoMeta'
 import { siteConfig } from '@/lib/config'
-import { studioValues, studioMilestones } from '@/data/team'
+import { studioValues, studioMilestones, teamMembers } from '@/data/team'
 import Card from '@/components/ui/Card.vue'
 import AppButton from '@/components/ui/AppButton.vue'
 import Badge from '@/components/ui/Badge.vue'
@@ -10,8 +10,6 @@ import {
   PhClockCounterClockwise as TimelineIcon,
   PhEnvelopeSimple as Mail,
   PhGithubLogo as Github,
-  PhHardDrives as Server,
-  PhCode as Code,
   PhGitPullRequest as GitPullRequest,
   PhShieldCheck as ShieldCheck,
   PhHandHeart as HandHeart
@@ -97,34 +95,64 @@ useSeoMeta(
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <Card class="space-y-3 p-5">
-          <div class="flex items-center gap-2.5">
-            <div class="p-2 rounded-lg bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
-              <Server weight="duotone" class="h-5 w-5" />
+        <Card
+          v-for="member in teamMembers"
+          :key="member.id"
+          hoverable
+          class="space-y-4 p-5 flex flex-col justify-between"
+        >
+          <div class="space-y-3">
+            <div class="flex items-center gap-3.5">
+              <img
+                v-if="member.avatar"
+                :src="member.avatar"
+                :alt="member.name"
+                class="h-12 w-12 rounded-xl object-cover border border-border/80 shadow-soft bg-muted shrink-0"
+                loading="lazy"
+              />
+              <div
+                v-else
+                class="h-12 w-12 rounded-xl bg-primary/10 text-primary border border-primary/20 flex items-center justify-center font-bold shrink-0"
+              >
+                {{ member.name.charAt(0) }}
+              </div>
+              <div class="min-w-0">
+                <h3 class="text-sm sm:text-base font-bold text-foreground truncate">{{ member.name }}</h3>
+                <p class="text-xs text-muted-foreground font-mono truncate">{{ member.role }}</p>
+              </div>
             </div>
-            <div>
-              <h3 class="text-sm font-bold text-foreground">财务资助 · 生态开拓 · AI 研发</h3>
-              <p class="text-xs text-muted-foreground">柠枺 (Lemwood)</p>
-            </div>
-          </div>
-          <p class="text-xs text-muted-foreground leading-relaxed">
-            全线高防服务器集群与公网带宽资助者，统筹财务支持、生态人脉拓展，主导 Golang 服务研发与 LogShare 智能诊断模型。
-          </p>
-        </Card>
 
-        <Card class="space-y-3 p-5">
-          <div class="flex items-center gap-2.5">
-            <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
-              <Code weight="duotone" class="h-5 w-5" />
-            </div>
-            <div>
-              <h3 class="text-sm font-bold text-foreground">系统工程 · 全栈架构 · 界面规范</h3>
-              <p class="text-xs text-muted-foreground">燕随 (YanSui)</p>
+            <p class="text-xs text-muted-foreground leading-relaxed">
+              {{ member.description }}
+            </p>
+
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span
+                v-for="tech in member.techStack"
+                :key="tech"
+                class="rounded-md bg-muted px-2 py-0.5 text-[11px] font-mono text-muted-foreground"
+              >
+                {{ tech }}
+              </span>
             </div>
           </div>
-          <p class="text-xs text-muted-foreground leading-relaxed">
-            主导全线底层系统与工程落地，负责 PHP 协程常驻服务、Rust 反混淆引擎、Vue 3 界面范式及 Docker / Linux 容器化与 BGP 路由调优。
-          </p>
+
+          <div class="pt-3 border-t border-border/50 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+            <span v-if="member.email" class="inline-flex items-center gap-1">
+              <Mail weight="duotone" class="h-3.5 w-3.5" />
+              <span>{{ member.email }}</span>
+            </span>
+            <a
+              v-if="member.github"
+              :href="member.github"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 font-mono text-foreground hover:underline"
+            >
+              <Github weight="duotone" class="h-3.5 w-3.5" />
+              <span>GitHub</span>
+            </a>
+          </div>
         </Card>
       </div>
     </section>
