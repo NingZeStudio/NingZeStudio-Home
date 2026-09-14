@@ -99,6 +99,84 @@ export const teamMembers: TeamMember[] = [
     techStack: ['Docker', 'Linux', 'BGP', 'PHP', 'Vue', 'Rust'],
     email: 'lyl518@outlook.com',
     github: 'https://github.com/qitry'
+  },
+  {
+    id: 'haha',
+    name: '哈哈',
+    role: '外部技术工程师',
+    title: '外部技术工程师',
+    avatar: new URL('@/assets/img/avatar-haha.png', import.meta.url).href,
+    description:
+      '协助工作室外部技术集成与系统联调，推动第三方平台对接、运维自动化脚本与工具链的协同开发与测试。',
+    techStack: ['系统联调', '脚本工程', '技术协作'],
+    qq: '2052249283'
+  },
+  {
+    id: 'feichen',
+    name: '飛尘',
+    role: '社区管理员',
+    title: '社区管理员',
+    avatar: new URL('@/assets/img/avatar-feichen.png', import.meta.url).href,
+    description:
+      '负责官方社群日常秩序维护与违规治理，协调玩家日常日志排障求助，对接并流转社区反馈与功能建议。',
+    techStack: ['社区治理', '日志答疑', '用户服务'],
+    qq: '3871256146'
+  }
+]
+
+export interface InfraNode {
+  name: string
+  type: string
+  description: string
+  services: string[]
+  metrics: string
+}
+
+export const infraNodes: InfraNode[] = [
+  {
+    name: '高防核心主控集群',
+    type: 'BGP / 多线高防独立服务器',
+    description: '承载 LogShare 核心解析 API、MariaDB 关系型数据库、Redis 缓存与 SpinYarn 混淆名还原引擎。',
+    services: ['LogShare.CN', 'PHP 8.4+ Swoole 6.2', 'MariaDB', 'Redis'],
+    metrics: '7×24H 进程常驻 · 内存自回收'
+  },
+  {
+    name: '高速镜像分发网络',
+    type: '国内多线加速节点',
+    description: '负责追踪 GitHub Releases 资源并提供高速反代与断点续传，搭载 PBKDF2 工作量证明防护。',
+    services: ['miawa (资源站)', 'Go 镜像引擎', 'PoW 验证网关'],
+    metrics: '国内大带宽 · 断点续传'
+  },
+  {
+    name: '边缘安全与度量网关',
+    type: 'OpenResty 边缘层',
+    description: '自研 OpenLiteWaf 与 OpenLiteStats，实时清洗恶意探测与异常流量，提供公开透明的运行大屏。',
+    services: ['OpenLiteWaf', 'OpenLiteStats', '安全拦截大屏'],
+    metrics: '毫秒级识别 · UV 线性计数'
+  }
+]
+
+export interface FaqItem {
+  q: string
+  a: string
+}
+
+export const studioFaqs: FaqItem[] = [
+  {
+    q: '柠泽旗下的公共服务会收费或引入广告吗？',
+    a: '永远不会。全线公共服务（LogShare、资源站镜像等）面向社区永久免费开放，不植入任何强制弹窗或商业广告。服务器与公网带宽费用由主理人全额资助，辅以社区好心人赞助，全部账目公开透明。'
+  },
+  {
+    q: '上传的日志包含我的账号隐私或敏感信息吗？',
+    a: '绝对安全。LogShare 服务端与客户端已内置多重脱敏机制，上传与展示时会自动过滤 Authlib-injector 令牌、Microsoft Token、本地敏感绝对路径与用户凭据；数据库由定时任务严格按 TTL 执行过期物理销毁。'
+  },
+  {
+    q: '第三方启动器或外部项目如何对接 LogShare？',
+    a: '全线 API 均提供标准 RESTful / OpenAPI 规范，支持跨域（CORS）与多文件/压缩包上传。开发者可在项目页查阅接口说明，接入无需繁琐审批；如需更高并发支持或官方集成展示，欢迎加入下游开发者群。'
+  },
+  {
+    q: '如何加入柠泽团队或参与项目共建？',
+    a: '我们长期欢迎熟悉 Minecraft 崩溃排障的解答志愿者，以及熟悉 PHP / Go / Rust / Vue 的开源开发者。您可以在 GitHub 提交 Pull Request，或在答疑群向管理人员自荐。'
   }
 ]
 
@@ -119,5 +197,5 @@ export const urgentRecruitment: UrgentRecruitment = {
     '颁发官方认证群管理员身份，共同制定社区互助守则'
   ],
   actionText: '加入答疑群直接自荐',
-  actionUrl: 'https://qm.qq.com/q/8T2lK9jX7a' // LogShare 答疑解惑群
+  actionUrl: 'https://qm.qq.com/q/gZ2El58RVe' // LogShare 答疑解惑群
 }

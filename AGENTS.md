@@ -10,8 +10,8 @@
   - `launchers.ts`：收录已深度接入 LogShare 生态的主流启动器（ZL2、FCL、Axolotl、PiLauncher、AMCL）及对接特性；
   - `sponsors.ts`：赞助数据模型，包含赞助者永久鸣谢榜、真实金额明细、支付渠道与专款专用透明度承诺；
   - `community.ts`：官方社区矩阵，精选收录四大官方交流与答疑群；
-  - `team.ts`：工作室理念、大事记、核心成员分工与致谢。
-- 核心路由：`/`（首页）、`/projects`（项目矩阵）、`/community`（社区交流）、`/about`（关于团队）、`/sponsor`（赞助支持与财务公开）。
+  - `team.ts`：团队成员矩阵（柠枺、燕随、哈哈、飛尘）、公网基础设施与集群拓扑（infraNodes）、开发者接入规范、非营利与数据隐私承诺、常见问题速查（studioFaqs）以及 MC 日志排障管理员急聘（urgentRecruitment）。
+- 核心路由：`/`（首页）、`/projects`（项目矩阵）、`/community`（社区交流）、`/about`（关于团队与架构）、`/sponsor`（赞助支持与财务公开）。
 - 基础配置与 SEO 位于 `src/lib/`（`config.ts`, `useSeoMeta.ts`, `toast.ts`）。
 
 ## 社区群列表规范（铁律）
