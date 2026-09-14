@@ -12,7 +12,8 @@ import {
   PhGithubLogo as Github,
   PhArrowSquareOut as ExternalLink,
   PhCode as Code,
-  PhFolderOpen as FolderOpen
+  PhFolderOpen as FolderOpen,
+  PhPlugsConnected as ConnectIcon
 } from '@phosphor-icons/vue'
 
 useSeoMeta({
@@ -135,11 +136,31 @@ const filteredProjects = computed(() => {
       <div class="inline-flex p-3 rounded-xl bg-muted/60 text-muted-foreground">
         <FolderOpen weight="duotone" class="h-8 w-8" />
       </div>
-      <p class="text-sm font-medium text-foreground">没有找到匹配的项目</p>
-      <p class="text-xs text-muted-foreground">请尝试更换搜索词或选择全部项目分类</p>
+      <p class="text-sm font-medium text-foreground">未检索到匹配的开源项目</p>
+      <p class="text-xs text-muted-foreground">请尝试更换关键字或切换至“全部开源项目”分类</p>
       <AppButton size="sm" variant="outline" @click="searchQuery = ''; currentCategory = 'all'">
         重置筛选
       </AppButton>
     </div>
+
+    <!-- 开发者与生态接入指引 -->
+    <section class="rounded-xl border border-border/70 bg-card p-6 sm:p-8 space-y-4 shadow-soft">
+      <div class="flex items-center gap-2 text-foreground font-bold text-lg">
+        <ConnectIcon weight="duotone" class="h-5 w-5 text-primary" />
+        <h2>开发者与启动器生态接入</h2>
+      </div>
+      <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-3xl">
+        LogShare.CN 与柠泽资源站全线提供无供应商绑定的标准 RESTful API 及 OpenAPI 文档。如果您正在开发 Minecraft 启动器、模组管理工具或服务器诊断面板，欢迎将诊断直传与镜像接口集成至您的客户端中。
+      </p>
+      <div class="flex flex-wrap items-center gap-3 pt-1">
+        <AppButton as="a" href="https://api.logshare.cn/docs" target="_blank" rel="noopener noreferrer" variant="primary" size="sm">
+          查看 LogShare API 文档
+          <ExternalLink weight="duotone" class="h-3.5 w-3.5" />
+        </AppButton>
+        <AppButton as="router-link" to="/community" variant="soft" size="sm">
+          加入下游开发者群交流
+        </AppButton>
+      </div>
+    </section>
   </div>
 </template>

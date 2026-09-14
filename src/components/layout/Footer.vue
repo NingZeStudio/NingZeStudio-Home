@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import { siteConfig } from '@/lib/config'
 import { toast } from '@/lib/toast'
 import {
-  PhChatCircle as MessageCircle,
   PhGithubLogo as Github,
   PhArrowSquareOut as ExternalLink,
   PhSparkle as Sparkle
@@ -21,7 +21,7 @@ const onVersionClick = () => {
 
   if (easterEggClicks.value >= 3) {
     easterEggClicks.value = 0
-    toast.success('🎉 恭喜发现彩蛋：以梦为基，携手共建更好的 Minecraft 中文社区！')
+    toast.success('专注 Minecraft 本土化基础设施与开发者工具研发。')
   }
 }
 </script>
@@ -37,18 +37,20 @@ const onVersionClick = () => {
             {{ siteConfig.description }}
           </p>
 
-          <p class="mt-6 text-sm font-semibold text-foreground">联系与社区</p>
+          <p class="mt-6 text-sm font-semibold text-foreground">快速链接与社区</p>
           <div class="mt-2 flex flex-wrap gap-x-5 gap-y-2">
-            <a
-              v-if="siteConfig.qqGroup"
-              :href="siteConfig.qqGroup"
-              target="_blank"
-              rel="noopener noreferrer"
+            <RouterLink
+              to="/sponsor"
               class="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-primary"
             >
-              <MessageCircle weight="duotone" class="h-3.5 w-3.5" />
-              官方交流群
-            </a>
+              赞助支持与财务公开
+            </RouterLink>
+            <RouterLink
+              to="/community"
+              class="inline-flex items-center gap-1.5 text-sm text-muted-foreground transition-colors hover:text-primary"
+            >
+              官方社群矩阵
+            </RouterLink>
             <a
               v-if="siteConfig.github"
               :href="siteConfig.github"

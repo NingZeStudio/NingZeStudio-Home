@@ -27,9 +27,9 @@ export interface SiteConfig {
 export const siteConfig: SiteConfig = {
   name: '柠泽工作室',
   nameEn: 'NingZe Studio',
-  slogan: '以梦为基，携手共进；共建更好的 Minecraft 中文社区。',
-  title: '柠泽工作室 (NingZe Studio) - 专注中文 Minecraft 生态建设',
-  description: '专注中文 Minecraft 生态建设。致力于打造 LogShare、柠泽资源站、SpinYarn 等更懂中文语境的现代化开源基础设施与社区工具矩阵。',
+  slogan: '专注 Minecraft 本土化基础设施与开发者工具研发。',
+  title: '柠泽工作室 (NingZe Studio) - 专注中文 Minecraft 生态与基础设施建设',
+  description: '致力于打造 LogShare、柠泽资源站、SpinYarn 等更贴合中文网络环境与技术语境的高性能开源基础设施与开发者生态矩阵。',
   url: 'https://github.com/NingZeStudio',
   github: 'https://github.com/NingZeStudio',
   email: '3436464181@qq.com',
@@ -38,7 +38,8 @@ export const siteConfig: SiteConfig = {
     { name: '首页', path: '/' },
     { name: '项目矩阵', path: '/projects' },
     { name: '社区交流', path: '/community' },
-    { name: '关于团队', path: '/about' }
+    { name: '关于团队', path: '/about' },
+    { name: '赞助支持', path: '/sponsor' }
   ],
   friendLinks: [
     { name: 'LogShare.CN', url: 'https://logshare.cn', desc: 'Minecraft 日志分享与分析平台' },

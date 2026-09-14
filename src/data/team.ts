@@ -11,42 +11,42 @@ export interface ValueItem {
 
 export const studioValues: ValueItem[] = [
   {
-    title: '专注中文生态',
-    desc: '紧扣国内网络环境与中文语境痛点，为 Minecraft 中文玩家和服主打造低延迟、易理解的本土化基础设施。'
+    title: '专注中文生态痛点',
+    desc: '紧扣国内网络环境与中文技术语境，持续打造无门槛、低延迟、高可用的本土化公共基础设施。'
   },
   {
-    title: '坚持开源自托管',
-    desc: '所有核心产品代码完全开放，不绑定封闭生态，架构上支持完全自建部署与社区共建。'
+    title: '坚持开源与自托管架构',
+    desc: '所有核心系统代码完全开源，协议透明，架构设计原生支持单机容器化与多节点集群自建部署。'
   },
   {
-    title: '克制工程美学',
-    desc: '坚守 Zinc / Slate 冷灰低饱和度视觉规范，全链路物理回弹阻尼动效，拒绝廉价高饱和渐变与 Emoji 堆叠。'
+    title: '克制严谨的工程美学',
+    desc: '恪守 Zinc / Slate 低饱和度视觉层级与微阻尼物理动效，剔除视觉噪音，专注于信息密度与交互效率。'
   },
   {
-    title: '公益透明运营',
-    desc: '所有捐助全额用于服务器硬件与带宽开销，提供长期稳定的公共镜像与智能分析节点。'
+    title: '公开透明的公益运营',
+    desc: '所有社会赞助款项专款专用，定向承担独立高防算力与高速带宽支出，定期对外公示财务明细。'
   }
 ]
 
 export const studioMilestones: Milestone[] = [
   {
     year: '2026.02',
-    title: '柠泽工作室正式成立',
-    desc: '立足于「以梦为基，携手共进」理念，开启中文 Minecraft 开发者工具与镜像基础设施矩阵建设。'
+    title: '柠泽工作室正式发起成立',
+    desc: '汇聚社区一线开发者与系统运维力量，开启 Minecraft 本土化基础设施与实用开发者工具矩阵的长期研发工程。'
   },
   {
     year: '2026.05',
-    title: '柠泽资源站 (miawa) 全新上线',
-    desc: '实现 GitHub Release 自动化高速镜像分发，引入 PBKDF2 PoW 智能门控防御爬虫。'
+    title: '柠泽资源站 (miawa) 正式上线',
+    desc: '实现 GitHub Release 自动化高速镜像加速，首创引入 PBKDF2 工作量证明（PoW）智能门控防爬机制。'
   },
   {
     year: '2026.08',
-    title: 'LogShare.CN 架构大版本演进',
-    desc: '自研 SpinYarn 反混淆引擎与 PHP 拓展上线，引入 OpenLiteWaf 与 OpenLiteStats 边缘防护中间件。'
+    title: 'LogShare.CN 架构重大版本演进',
+    desc: '自研 SpinYarn 堆栈反混淆引擎与 PHP 原生扩展，并自研 OpenLiteWaf 与 OpenLiteStats 边缘中间件支撑全线服务。'
   },
   {
     year: '2026.09',
-    title: '全线统一设计体系与模板蒸馏',
-    desc: '全站对齐 LogShare 设计范式，发布 LogShare-Front-Template 与 ElementsPlus-Admin-Template 模板。'
+    title: '启动器生态深度互通与工程模板开源',
+    desc: '与 Zalith Launcher 2、Fold Craft Launcher 等主流启动器达成生态深度集成；蒸馏开源 LogShare-Front-Template 模板。'
   }
 ]

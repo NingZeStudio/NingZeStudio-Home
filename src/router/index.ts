@@ -31,6 +31,12 @@ const router = createRouter({
       meta: { title: '关于团队' }
     },
     {
+      path: '/sponsor',
+      name: 'sponsor',
+      component: () => import('@/views/SponsorView.vue'),
+      meta: { title: '赞助支持' }
+    },
+    {
       path: '/showcase',
       name: 'showcase',
       component: () => import('@/views/ShowcaseView.vue'),

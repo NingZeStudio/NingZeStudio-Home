@@ -4,39 +4,56 @@ import { siteConfig } from '@/lib/config'
 import { studioValues, studioMilestones } from '@/data/team'
 import Card from '@/components/ui/Card.vue'
 import AppButton from '@/components/ui/AppButton.vue'
+import Badge from '@/components/ui/Badge.vue'
 import {
   PhHeart as Heart,
   PhClockCounterClockwise as TimelineIcon,
   PhEnvelopeSimple as Mail,
   PhGithubLogo as Github,
   PhHardDrives as Server,
-  PhCode as Code
+  PhCode as Code,
+  PhGitPullRequest as GitPullRequest,
+  PhShieldCheck as ShieldCheck,
+  PhHandHeart as HandHeart
 } from '@phosphor-icons/vue'
 
-useSeoMeta({
-  title: '关于团队',
-  description: '了解柠泽工作室背后的团队愿景、价值观与开源历程。'
-}, siteConfig.name)()
+useSeoMeta(
+  {
+    title: '关于团队',
+    description: '了解柠泽工作室背后的技术愿景、工程价值观与开源历程。'
+  },
+  siteConfig.name
+)()
 </script>
 
 <template>
   <div class="container mx-auto max-w-5xl px-4 sm:px-6 py-10 space-y-16">
     <!-- 标头与团队定位 -->
-    <div class="space-y-4 max-w-2xl">
-      <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-foreground">关于柠泽工作室</h1>
+    <div class="space-y-4 max-w-3xl">
+      <div class="inline-flex items-center gap-2">
+        <Badge variant="secondary" class="py-1 px-3 font-mono text-xs">
+          关于柠泽 · Team & Mission
+        </Badge>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-black tracking-tight text-foreground">
+        专注 Minecraft 本土化基础设施的非营利技术团队
+      </h1>
       <p class="text-base text-muted-foreground leading-relaxed">
-        一群热爱 Minecraft 的开发者与运维人员用业余时间打造的技术团队。我们立足本土网络环境与中文语境痛点，致力于建设稳定高效、公开透明的开源基础设施与社区工具。
+        柠泽工作室是由 Minecraft 中文社区的一线开发者、系统运维与架构师自发组建的技术团队。针对中文环境特有的复杂网络链路与日志排障断层，致力于研发稳定可靠、自托管友好的开源工具矩阵与公共节点。
       </p>
     </div>
 
     <!-- 核心价值观卡片 -->
     <section class="space-y-6">
       <div class="border-b border-border/60 pb-3">
-        <h2 class="text-xl font-bold tracking-tight text-foreground">我们的核心理念</h2>
+        <h2 class="text-xl font-bold tracking-tight text-foreground">工程理念与价值观</h2>
+        <p class="text-xs sm:text-sm text-muted-foreground mt-1">
+          指引我们技术选型与产品演进的核心准则
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <Card v-for="val in studioValues" :key="val.title" class="space-y-2">
+        <Card v-for="val in studioValues" :key="val.title" class="space-y-2 p-5">
           <h3 class="text-base font-bold text-foreground">{{ val.title }}</h3>
           <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             {{ val.desc }}
@@ -49,7 +66,10 @@ useSeoMeta({
     <section class="space-y-6">
       <div class="flex items-center gap-2 border-b border-border/60 pb-3">
         <TimelineIcon weight="duotone" class="h-5 w-5 text-primary" />
-        <h2 class="text-xl font-bold tracking-tight text-foreground">发展历程与大事记</h2>
+        <div>
+          <h2 class="text-xl font-bold tracking-tight text-foreground">研发历程与大事记</h2>
+          <p class="text-xs sm:text-sm text-muted-foreground mt-0.5">记录工作室在关键架构上的突破与迭代</p>
+        </div>
       </div>
 
       <div class="space-y-4">
@@ -70,13 +90,16 @@ useSeoMeta({
     <section class="space-y-6">
       <div class="flex items-center gap-2 border-b border-border/60 pb-3">
         <Heart weight="duotone" class="h-5 w-5 text-rose-500" />
-        <h2 class="text-xl font-bold tracking-tight text-foreground">共建者与基础设施运维</h2>
+        <div>
+          <h2 class="text-xl font-bold tracking-tight text-foreground">共建者与基础设施运维</h2>
+          <p class="text-xs sm:text-sm text-muted-foreground mt-0.5">默默支撑全线公网节点平稳运行的核心伙伴</p>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-        <Card class="space-y-3">
+        <Card class="space-y-3 p-5">
           <div class="flex items-center gap-2.5">
-            <div class="p-2 rounded-lg bg-blue-500/10 text-blue-500 border border-blue-500/20">
+            <div class="p-2 rounded-lg bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
               <Server weight="duotone" class="h-5 w-5" />
             </div>
             <div>
@@ -85,13 +108,13 @@ useSeoMeta({
             </div>
           </div>
           <p class="text-xs text-muted-foreground leading-relaxed">
-            长年提供高防独立服务器集群、高速公网带宽以及合规域名备案支撑，保障 LogShare 与资源站的全天候稳定运行。
+            长年提供高防独立服务器集群、高速公网带宽以及合规域名支撑，负责全天候网络链路可用性与数据安全防护。
           </p>
         </Card>
 
-        <Card class="space-y-3">
+        <Card class="space-y-3 p-5">
           <div class="flex items-center gap-2.5">
-            <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-500 border border-emerald-500/20">
+            <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
               <Code weight="duotone" class="h-5 w-5" />
             </div>
             <div>
@@ -100,27 +123,73 @@ useSeoMeta({
             </div>
           </div>
           <p class="text-xs text-muted-foreground leading-relaxed">
-            主导工作室全线 Web 视觉规范、微动效回弹交互与 LogShare / ElementsPlus 模版架构，负责端到端前端体验落地。
+            主导工作室全线 Web 视觉规范、微动效回弹交互与 LogShare / ElementsPlus 模版架构，负责端到端前端工程落地。
           </p>
         </Card>
       </div>
     </section>
 
-    <!-- 联系我们 -->
-    <section class="rounded-xl border border-border/70 bg-card p-6 sm:p-8 space-y-4">
-      <h2 class="text-xl font-bold tracking-tight text-foreground">联系与合作</h2>
-      <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-        如果你有任何合作意向、功能提议或开源项目联动想法，随时欢迎通过以下方式与我们取得联系。
-      </p>
+    <!-- 开源协作准则与规范 -->
+    <section class="space-y-6">
+      <div class="flex items-center gap-2 border-b border-border/60 pb-3">
+        <GitPullRequest weight="duotone" class="h-5 w-5 text-primary" />
+        <div>
+          <h2 class="text-xl font-bold tracking-tight text-foreground">开源协作准则与规范</h2>
+          <p class="text-xs sm:text-sm text-muted-foreground mt-0.5">遵循规范化工程流程，让社区共建更高效可靠</p>
+        </div>
+      </div>
 
-      <div class="flex flex-wrap items-center gap-3 pt-2">
-        <AppButton as="a" :href="'mailto:' + siteConfig.email" variant="outline" size="sm">
-          <Mail weight="duotone" class="h-4 w-4" />
-          {{ siteConfig.email }}
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <Card class="p-5 space-y-2">
+          <div class="text-xs font-mono font-bold text-primary">01. 提交信息规范</div>
+          <h3 class="text-sm font-bold text-foreground">Apache 规范 Commit</h3>
+          <p class="text-xs text-muted-foreground leading-relaxed">
+            遵循 `feat:`, `fix:`, `docs:`, `refactor:` 前缀，简明扼要概括变更范围，详情行描述具体实现。
+          </p>
+        </Card>
+
+        <Card class="p-5 space-y-2">
+          <div class="text-xs font-mono font-bold text-primary">02. 质量与静态检查</div>
+          <h3 class="text-sm font-bold text-foreground">自动化 CI 门禁</h3>
+          <p class="text-xs text-muted-foreground leading-relaxed">
+            所有合并请求须通过项目配置的 ESLint、TypeScript 编译检查或 PHPStan 静态分析测试。
+          </p>
+        </Card>
+
+        <Card class="p-5 space-y-2">
+          <div class="text-xs font-mono font-bold text-primary">03. 安全与责任披露</div>
+          <h3 class="text-sm font-bold text-foreground">安全缺陷私密反馈</h3>
+          <p class="text-xs text-muted-foreground leading-relaxed">
+            若发现潜在高危安全漏洞，请通过邮件或 GitHub Security Advisory 私密通报，避免公开利用。
+          </p>
+        </Card>
+      </div>
+    </section>
+
+    <!-- 联系与赞助入口 -->
+    <section class="rounded-xl border border-border/70 bg-card p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 shadow-soft">
+      <div class="space-y-2 max-w-xl">
+        <div class="flex items-center gap-2 text-foreground font-bold text-base">
+          <ShieldCheck weight="duotone" class="h-5 w-5 text-emerald-500" />
+          <span>联系与商务/开源合作</span>
+        </div>
+        <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+          如果您有开源项目联动、技术合作或希望提供算力/带宽赞助支持，随时欢迎通过下方渠道与团队接洽。
+        </p>
+      </div>
+
+      <div class="flex flex-wrap items-center gap-3 shrink-0">
+        <AppButton as="router-link" to="/sponsor" variant="primary" size="md">
+          <HandHeart weight="duotone" class="h-4 w-4" />
+          支持我们
         </AppButton>
-        <AppButton as="a" :href="siteConfig.github" variant="soft" size="sm">
+        <AppButton as="a" :href="'mailto:' + siteConfig.email" variant="outline" size="md">
+          <Mail weight="duotone" class="h-4 w-4" />
+          邮件联系
+        </AppButton>
+        <AppButton as="a" :href="siteConfig.github" target="_blank" rel="noopener noreferrer" variant="soft" size="md">
           <Github weight="duotone" class="h-4 w-4" />
-          GitHub 团队主页
+          GitHub
         </AppButton>
       </div>
     </section>

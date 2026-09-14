@@ -6,9 +6,12 @@
 - 技术栈：**Vue 3.5 + TypeScript + Vite + Tailwind CSS + Phosphor Icons**（服务端与系统级核心语言为 **PHP** 与 **Go**）。
 - 部署与产物：纯静态 SPA，产物位于 `dist/`，可部署于任何 CDN、Nginx 或对象存储上。
 - 数据模型位于 `src/data/`：
-  - `projects.ts`：收录工作室 11+ 代表性开源生态项目（LogShare、miawa、SpinYarn、OpenLiteWaf、OpenLiteStats 等），含 Stars、技术栈、链接与描述；
+  - `projects.ts`：收录工作室 12+ 代表性开源生态项目（LogShare、miawa、SpinYarn、OpenLiteWaf、OpenLiteStats 等），含 Stars、技术栈、链接与描述；
+  - `launchers.ts`：收录已深度接入 LogShare 生态的主流启动器（ZL2、FCL、Axolotl、PiLauncher、AMCL）及对接特性；
+  - `sponsors.ts`：赞助数据模型，包含赞助者永久鸣谢榜、真实金额明细、支付渠道与专款专用透明度承诺；
   - `community.ts`：官方社区矩阵，精选收录四大官方交流与答疑群；
   - `team.ts`：工作室理念、大事记、核心成员分工与致谢。
+- 核心路由：`/`（首页）、`/projects`（项目矩阵）、`/community`（社区交流）、`/about`（关于团队）、`/sponsor`（赞助支持与财务公开）。
 - 基础配置与 SEO 位于 `src/lib/`（`config.ts`, `useSeoMeta.ts`, `toast.ts`）。
 
 ## 社区群列表规范（铁律）
