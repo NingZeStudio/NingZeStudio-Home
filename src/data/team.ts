@@ -9,6 +9,28 @@ export interface ValueItem {
   desc: string
 }
 
+export interface TeamMember {
+  id: string
+  name: string
+  role: string
+  title: string
+  description: string
+  techStack: string[]
+  email?: string
+  qq?: string
+  github?: string
+}
+
+export interface UrgentRecruitment {
+  title: string
+  badge: string
+  description: string
+  requirements: string[]
+  benefits: string[]
+  actionText: string
+  actionUrl: string
+}
+
 export const studioValues: ValueItem[] = [
   {
     title: '专注中文生态痛点',
@@ -50,3 +72,49 @@ export const studioMilestones: Milestone[] = [
     desc: '与 Zalith Launcher 2、Fold Craft Launcher 等主流启动器达成生态深度集成；蒸馏开源 LogShare-Front-Template 模板。'
   }
 ]
+
+export const teamMembers: TeamMember[] = [
+  {
+    id: 'lemwood',
+    name: '柠枺 (Lemwood)',
+    role: '基础设施 & 后端架构',
+    title: '服务器 & 域名备案运维',
+    description:
+      '全线高防独立服务器集群、网络带宽支撑及域名备案赞助者。负责资源站与核心服务架构、多节点容灾部署与网络可用性。',
+    techStack: ['Golang', 'Docker', 'Linux / BGP', 'PHP'],
+    email: '3436464181@qq.com',
+    qq: '3436464181',
+    github: 'https://github.com/leemwood'
+  },
+  {
+    id: 'yansui',
+    name: '燕随 (YanSui)',
+    role: '前端工程 & 界面设计',
+    title: '核心前端架构师',
+    description:
+      '主导工作室全线 Web 视觉规范、微阻尼物理动效交互与 LogShare / ElementsPlus 模版架构，负责端到端前端体验落地。',
+    techStack: ['Vue 3', 'TypeScript', 'Vite', 'Tailwind CSS'],
+    email: 'lyl518@outlook.com',
+    github: 'https://github.com/qitry'
+  }
+]
+
+export const urgentRecruitment: UrgentRecruitment = {
+  title: '急聘：Minecraft 游戏日志排查管理员 / 技术答疑志愿者',
+  badge: '急缺加入 · 长期招募',
+  description:
+    '随着 LogShare.CN 与官方答疑社区的高速发展，平台每日承载成千上万份玩家与服主的报错求助。我们急需精通 Minecraft 游戏运行机制与异常堆栈分析的技术高手加入管理团队，共同守护友善高效的中文互助生态！',
+  requirements: [
+    '熟练读懂 Minecraft Crash-Report 与 Latest.log 运行日志，能快速定位 Caused by 根因堆栈与异常类',
+    '熟悉主流 Mod 加载器（Forge / NeoForge / Fabric / Quilt）运行机制，对常见模组冲突与 Mixin Apply 报错有诊断经验',
+    '了解常见服务端核心（Paper / Purpur / Leaves 等）报错日志排障者优先',
+    '具备耐心与社区友善沟通素养，愿意在空余时间为求助玩家答疑指引'
+  ],
+  benefits: [
+    '直通核心开发与运维团队，深度参与 LogShare 智能诊断特征库与 RAG 知识体系建设',
+    '永久收录进柠泽工作室官方贡献者名人堂，享有全线自研工具最高级权限',
+    '颁发官方认证群管理员身份，共同制定社区互助守则'
+  ],
+  actionText: '加入答疑群直接自荐',
+  actionUrl: 'https://qm.qq.com/q/8T2lK9jX7a' // LogShare 答疑解惑群
+}

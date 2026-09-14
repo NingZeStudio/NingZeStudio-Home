@@ -3,6 +3,7 @@ import { useSeoMeta } from '@/lib/useSeoMeta'
 import { siteConfig } from '@/lib/config'
 import { projects } from '@/data/projects'
 import { launchers } from '@/data/launchers'
+import { teamMembers, urgentRecruitment } from '@/data/team'
 import AppButton from '@/components/ui/AppButton.vue'
 import Card from '@/components/ui/Card.vue'
 import Badge from '@/components/ui/Badge.vue'
@@ -18,7 +19,13 @@ import {
   PhCode as Code,
   PhRocketLaunch as Rocket,
   PhHeart as Heart,
-  PhShieldCheck as ShieldCheck
+  PhShieldCheck as ShieldCheck,
+  PhEnvelopeSimple as Mail,
+  PhChatCircleDots as ChatIcon,
+  PhUserPlus as UserPlus,
+  PhCheckCircle as CheckCircle,
+  PhWarningCircle as WarningIcon,
+  PhHardDrives as Server
 } from '@phosphor-icons/vue'
 
 useSeoMeta(
@@ -176,6 +183,165 @@ const techHighlights = [
             </div>
           </div>
         </Card>
+      </div>
+    </section>
+
+    <!-- 核心团队与维护者（移植自资源站关于界面的成员卡片） -->
+    <section class="space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-border/60 pb-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <UsersThree weight="duotone" class="h-5 w-5 text-primary" />
+            <h2 class="text-2xl font-bold tracking-tight text-foreground">核心团队与维护者</h2>
+          </div>
+          <p class="text-sm text-muted-foreground mt-1">
+            由 Minecraft 社区开发者与系统运维人员用业余时间打造的开源工程团队
+          </p>
+        </div>
+        <AppButton as="router-link" to="/about" variant="ghost" size="sm" class="self-start sm:self-auto">
+          了解团队理念与历程
+          <ArrowRight weight="duotone" class="h-3.5 w-3.5" />
+        </AppButton>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <Card
+          v-for="member in teamMembers"
+          :key="member.id"
+          hoverable
+          class="p-6 flex flex-col justify-between space-y-4"
+        >
+          <div class="space-y-3">
+            <div class="flex items-start justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="p-2.5 rounded-xl bg-primary/10 text-primary border border-primary/20">
+                  <component :is="member.id === 'lemwood' ? Server : Code" weight="duotone" class="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 class="text-base font-bold text-foreground">{{ member.name }}</h3>
+                  <p class="text-xs text-muted-foreground font-mono">{{ member.role }} · {{ member.title }}</p>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              {{ member.description }}
+            </p>
+
+            <!-- 技术栈标签 -->
+            <div class="flex flex-wrap gap-1.5 pt-1">
+              <span
+                v-for="tech in member.techStack"
+                :key="tech"
+                class="rounded-md bg-muted px-2 py-0.5 text-xs font-mono text-muted-foreground"
+              >
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+
+          <!-- 联系信息与外链 -->
+          <div class="pt-3 border-t border-border/50 flex flex-wrap items-center justify-between gap-2 text-xs text-muted-foreground">
+            <div class="flex items-center gap-3">
+              <span v-if="member.email" class="inline-flex items-center gap-1">
+                <Mail weight="duotone" class="h-3.5 w-3.5" />
+                <span>{{ member.email }}</span>
+              </span>
+              <span v-if="member.qq" class="inline-flex items-center gap-1">
+                <ChatIcon weight="duotone" class="h-3.5 w-3.5" />
+                <span>QQ: {{ member.qq }}</span>
+              </span>
+            </div>
+
+            <a
+              v-if="member.github"
+              :href="member.github"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1 font-mono text-foreground hover:underline"
+            >
+              <Github weight="duotone" class="h-3.5 w-3.5" />
+              <span>GitHub</span>
+            </a>
+          </div>
+        </Card>
+      </div>
+    </section>
+
+    <!-- 【急需】MC 游戏日志排障管理员招募专区 -->
+    <section class="rounded-2xl border-2 border-primary/30 bg-card p-6 sm:p-8 space-y-6 shadow-card relative overflow-hidden">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-border/60 pb-5">
+        <div class="space-y-1.5">
+          <div class="inline-flex items-center gap-2">
+            <Badge variant="secondary" class="gap-1.5 py-1 px-3 text-xs font-bold text-primary">
+              <WarningIcon weight="duotone" class="h-4 w-4" />
+              <span>{{ urgentRecruitment.badge }}</span>
+            </Badge>
+          </div>
+          <h2 class="text-xl sm:text-2xl font-black tracking-tight text-foreground">
+            {{ urgentRecruitment.title }}
+          </h2>
+        </div>
+
+        <AppButton
+          as="a"
+          :href="urgentRecruitment.actionUrl"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="primary"
+          size="md"
+          class="shrink-0"
+        >
+          <UserPlus weight="duotone" class="h-4 w-4" />
+          <span>{{ urgentRecruitment.actionText }}</span>
+        </AppButton>
+      </div>
+
+      <p class="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+        {{ urgentRecruitment.description }}
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-1">
+        <!-- 期待您的技能 -->
+        <div class="space-y-3">
+          <h3 class="text-sm font-bold text-foreground flex items-center gap-2">
+            <CheckCircle weight="duotone" class="h-4 w-4 text-emerald-500" />
+            <span>我们需要您具备：</span>
+          </h3>
+          <ul class="space-y-2 text-xs text-muted-foreground leading-relaxed">
+            <li
+              v-for="(req, idx) in urgentRecruitment.requirements"
+              :key="idx"
+              class="flex items-start gap-2"
+            >
+              <span class="h-1.5 w-1.5 rounded-full bg-foreground/40 mt-1.5 shrink-0" />
+              <span>{{ req }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- 社区回馈与专属权益 -->
+        <div class="space-y-3">
+          <h3 class="text-sm font-bold text-foreground flex items-center gap-2">
+            <Heart weight="duotone" class="h-4 w-4 text-rose-500" />
+            <span>我们将为您提供：</span>
+          </h3>
+          <ul class="space-y-2 text-xs text-muted-foreground leading-relaxed">
+            <li
+              v-for="(ben, idx) in urgentRecruitment.benefits"
+              :key="idx"
+              class="flex items-start gap-2"
+            >
+              <span class="h-1.5 w-1.5 rounded-full bg-foreground/40 mt-1.5 shrink-0" />
+              <span>{{ ben }}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="rounded-xl bg-muted/40 p-3.5 sm:p-4 text-xs text-muted-foreground flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <span>自荐或咨询：请直接点击上方加群，入群后联系管理员注明「日志排查自荐」，或发送自荐信至 <strong class="text-foreground font-mono">3436464181@qq.com</strong>。</span>
+        <span class="shrink-0 font-mono text-[11px] text-muted-foreground">欢迎广大热心开发者与服主加入</span>
       </div>
     </section>
 
