@@ -77,11 +77,11 @@ export const teamMembers: TeamMember[] = [
   {
     id: 'lemwood',
     name: '柠枺 (Lemwood)',
-    role: '基础设施 & 后端架构',
-    title: '服务器 & 域名备案运维',
+    role: '财务资助 · 生态开拓 · AI 研发',
+    title: '生态主理人 & 算力赞助',
     description:
-      '全线高防独立服务器集群、网络带宽支撑及域名备案赞助者。负责资源站与核心服务架构、多节点容灾部署与网络可用性。',
-    techStack: ['Golang', 'Docker', 'Linux / BGP', 'PHP'],
+      '全线高防服务器集群与网络带宽全额资助者。统筹工作室财务运营、开发者人脉拓展与外部启动器生态联动，主导 Golang 服务研发与 LogShare 智能诊断模型。',
+    techStack: ['财务', 'Golang', '生态', '人脉', 'AI'],
     email: '3436464181@qq.com',
     qq: '3436464181',
     github: 'https://github.com/leemwood'
@@ -89,11 +89,11 @@ export const teamMembers: TeamMember[] = [
   {
     id: 'yansui',
     name: '燕随 (YanSui)',
-    role: '前端工程 & 界面设计',
-    title: '核心前端架构师',
+    role: '系统工程 · 全栈架构 · 界面规范',
+    title: '核心系统架构师',
     description:
-      '主导工作室全线 Web 视觉规范、微阻尼物理动效交互与 LogShare / ElementsPlus 模版架构，负责端到端前端体验落地。',
-    techStack: ['Vue 3', 'TypeScript', 'Vite', 'Tailwind CSS'],
+      '主导全线系统的底层架构与工程落地。负责 PHP 协程常驻服务、Rust 堆栈反混淆引擎、Vue 3 界面设计范式及 Docker / Linux 容器化与网络 BGP 路由调优。',
+    techStack: ['Docker', 'Linux', 'BGP', 'PHP', 'Vue', 'Rust'],
     email: 'lyl518@outlook.com',
     github: 'https://github.com/qitry'
   }

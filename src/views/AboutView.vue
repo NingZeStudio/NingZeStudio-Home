@@ -103,12 +103,12 @@ useSeoMeta(
               <Server weight="duotone" class="h-5 w-5" />
             </div>
             <div>
-              <h3 class="text-sm font-bold text-foreground">基础设施与服务器赞助</h3>
+              <h3 class="text-sm font-bold text-foreground">财务资助 · 生态开拓 · AI 研发</h3>
               <p class="text-xs text-muted-foreground">柠枺 (Lemwood)</p>
             </div>
           </div>
           <p class="text-xs text-muted-foreground leading-relaxed">
-            长年提供高防独立服务器集群、高速公网带宽以及合规域名支撑，负责全天候网络链路可用性与数据安全防护。
+            全线高防服务器集群与公网带宽资助者，统筹财务支持、生态人脉拓展，主导 Golang 服务研发与 LogShare 智能诊断模型。
           </p>
         </Card>
 
@@ -118,12 +118,12 @@ useSeoMeta(
               <Code weight="duotone" class="h-5 w-5" />
             </div>
             <div>
-              <h3 class="text-sm font-bold text-foreground">设计规范与前端工程</h3>
+              <h3 class="text-sm font-bold text-foreground">系统工程 · 全栈架构 · 界面规范</h3>
               <p class="text-xs text-muted-foreground">燕随 (YanSui)</p>
             </div>
           </div>
           <p class="text-xs text-muted-foreground leading-relaxed">
-            主导工作室全线 Web 视觉规范、微动效回弹交互与 LogShare / ElementsPlus 模版架构，负责端到端前端工程落地。
+            主导全线底层系统与工程落地，负责 PHP 协程常驻服务、Rust 反混淆引擎、Vue 3 界面范式及 Docker / Linux 容器化与 BGP 路由调优。
           </p>
         </Card>
       </div>
